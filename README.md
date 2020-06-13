@@ -29,17 +29,15 @@ User: (Clicks on Button 1)
 
 Bot: You have chosen to book 2 simple rooms
 
-(Clicking on button 2 should be handled similarly)
-
 ## Clean room
 
 User: I want to have my room cleaned
 
 Bot: When should I arrange for a cleaning?
 
-User: Could you send someone in 2 hours?
+User: Could you send someone at 5 pm?
 
-Bot: Sure, I have scheduled a cleaning for 5 pm today.
+Bot: Sure, I have scheduled a cleaning for 2020-06-13T17:00:00.000-07:00.
 
 The above two flows are the only multi-step flows. The flows adapt themselves according to the user input. For eg., if the user says "I want to book a room for 2 people", the bot responds:
 " What type of room would you want to book?

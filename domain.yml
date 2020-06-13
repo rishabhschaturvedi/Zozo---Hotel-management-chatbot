@@ -1,0 +1,147 @@
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - chitchat
+  - thank_you
+  - FAQ_Check_in
+  - FAQ_Check_out
+  - FAQ_cancel_reservation
+  - FAQ_cancellation_policy
+  - FAQ_restaurant
+  - FAQ_breakfast_availability
+  - FAQ_breakfast_timings
+  - FAQ_restaurant_timings
+  - book_room:
+        use_entities: []
+  - inform:
+        use_entities: []
+
+  - clean_room:
+        use_entities: []
+
+  
+entities:
+    - number
+    - no_of_rooms
+    - type_of_rooms
+    - time
+
+slots:
+    no_of_rooms:
+        type: unfeaturized
+    type_of_rooms:
+        type: unfeaturized
+    time:
+        type: unfeaturized
+    grain:
+        type: unfeaturized
+    requested_slot:
+        type: unfeaturized
+    
+forms:
+    - book_room_form
+    - clean_room_form
+    
+responses:
+  utter_greet:
+  - text: "Hey! I am Zozo. How may I help you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye, have a nice day"
+
+  utter_iamabot:
+  - text: "I am Zozo, your assistant. How may I help you?"
+  
+  utter_feelings:
+  - text: "I am great, thanks for asking"
+  
+  utter_wellwish:
+  - text: "Everything will be alright, dont worry"
+  
+  utter_welcome:
+  - text: "You're welcome!"
+  
+  utter_FAQ_Check_in:
+  - text: "Check-in time starts at 4 PM. Minimum check-in age is 21. Please contact the reception for early check-in requests."
+  
+  utter_FAQ_Check_out:
+  - text: "Check-out time is 11 AM. Please contact the reception for late checkout requests."
+  
+  utter_FAQ_cancel_reservation:
+  - text: "To cancel a reservation, select the “Reservations” link from the homepage.
+           On the Reservations page, under the heading ‘View, Change or Cancel a Reservation,’ enter your confirmation number, and either the last name on the reservation or the last four digits of the credit card used to make the reservation."
+  
+  utter_FAQ_cancellation_policy:
+  - text: "The booking deposit is refundable if the cancellation occurs at least 15 days before arrival. For cancellations made after this limit, a penalty will be imposed based on the cancellation policy."
+  
+  utter_FAQ_restaurant:
+  - text: "Yes, the hotel has a restaurant called the Zephyr Bar. With our menu we strive to reflect the historic art and the spirit of our neighborhood by offering a glimpse into what makes our area unique."
+    image: "https://media-cdn.tripadvisor.com/media/photo-s/10/a6/be/df/zephyr.jpg"
+    
+  utter_FAQ_breakfast_availability:
+  - text: "The hotel provides its guests with a free made-to-order breakfast each morning."
+  
+  utter_FAQ_breakfast_timings:
+  - text: "Monday through Friday breakfast is 6 am to 9 am. On Saturday and Sunday, we are open from 7 am to 10:30 am."
+  
+  utter_FAQ_restaurant_timings:
+  - text: "Our restaurant serves a dazzling 24-hour menu."
+  
+  utter_book_room:
+  - text: "You have chosen to book {no_of_rooms} {type_of_rooms} rooms"
+    
+  utter_ask_no_of_rooms:
+  - text: "How many rooms would you like to book?"
+  
+  utter_ask_type_of_rooms:
+  - text: "What type of room would you want to book?"
+    buttons:
+    - title: "Simple"
+      payload: '/inform{"type_of_rooms":"Simple"}'
+    - title: "Deluxe"
+      payload: '/inform{"type_of_rooms":"Deluxe"}'
+      
+  utter_ask_continue:
+  - text: "Would you like to continue booking rooms?"
+  
+  utter_ask_continue2:
+  - text: "Would you like to continue to scheduling your room cleaning?"
+  
+  utter_ask_time:
+  - text: "When should I arrange for a cleaning?"
+  
+  utter_room_clean:
+  - text: "Sure, I have scheduled a cleaning for {time}."
+  
+  utter_not_a_valid_time:
+  - text: "I didn't recognize that time format, try another format."
+  
+  utter_wrong_type_of_rooms:
+  - text: "I didn't recognize that type of rooms format, try another format."
+  
+  utter_wrong_no_of_rooms:
+  - text: "I didn't recognize that number of rooms format, try another format."
+
+  
+  
+actions:
+    - action_faqs
+    
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
